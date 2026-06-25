@@ -6,6 +6,8 @@ import { MailerModule } from '@nestjs-modules/mailer';
 import { ConfigService } from '@nestjs/config';
 import { EjsAdapter } from '@nestjs-modules/mailer/adapters/ejs.adapter';
 import { join } from 'path';
+import { EmailTopology } from './rabbitmq/email.topology';
+import { EmailRetryService } from './rabbitmq/email.retry.service';
 
 @Module({
   imports: [
@@ -30,6 +32,6 @@ import { join } from 'path';
     }),
   ],
   controllers: [NotificationController],
-  providers: [NotificationService],
+  providers: [NotificationService, EmailTopology, EmailRetryService],
 })
 export class NotificationModule {}

@@ -25,6 +25,8 @@ export const QUEUES = {
   AUTH: 'auth:queue',
   NOTIFICATIONS: 'notifications:queue',
   LESSONS: 'lessons:queue',
+  NOTIFICATIONS_RETRY: 'notifications.retry.queue',
+  NOTIFICATIONS_DEAD: 'notifications.dead.queue',
 } as const;
 
 export const EXCHANGES = {
@@ -36,6 +38,5 @@ export const EXCHANGES = {
 export const EMAIL_ROUTING_KEYS = {
   SEND_EMAIL: 'email.send',
   EMAIL_RETRY_500: 'email.retry.500',
-  EMAIL_RETRY_1000: 'email.retry.1000',
   EMAIL_DEAD: 'email.dead',
 } as const;
