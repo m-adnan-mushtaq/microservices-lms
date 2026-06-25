@@ -15,6 +15,10 @@ import { QUEUES } from '@app/common/constants';
       Helper.createRABBITMQClient(constants.APPS.USERS, QUEUES.USERS),
       Helper.createRABBITMQClient(constants.APPS.COURSES, QUEUES.COURSES),
       Helper.createRABBITMQClient(constants.APPS.AUTH, QUEUES.AUTH),
+      Helper.createRABBITMQClient(
+        constants.APPS.NOTIFICATIONS,
+        QUEUES.NOTIFICATIONS,
+      ),
     ]),
   ],
   controllers: [GateawayController, AuthController],

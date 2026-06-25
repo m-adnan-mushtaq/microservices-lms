@@ -4,6 +4,7 @@ export const APPS = {
   COURSES: 'courses',
   LESSONS: 'lessons',
   USERS: 'users',
+  NOTIFICATIONS: 'notifications',
 };
 
 export const MESSAGES = {
@@ -13,6 +14,9 @@ export const MESSAGES = {
   AUTH: {
     SIGN_UP: 'auth:sign-up',
   },
+  NOTIFICATIONS: {
+    SEND_EMAIL: 'notifications:send-email',
+  },
 } as const;
 
 export const QUEUES = {
@@ -21,4 +25,17 @@ export const QUEUES = {
   AUTH: 'auth:queue',
   NOTIFICATIONS: 'notifications:queue',
   LESSONS: 'lessons:queue',
+} as const;
+
+export const EXCHANGES = {
+  NOTIFICATIONS: 'notifications.exchange',
+  NOTIFICATIONS_RETRY: 'notifications.retry.exchange',
+  NOTIFICATIONS_DEAD: 'notifications.dead.exchange',
+} as const;
+
+export const EMAIL_ROUTING_KEYS = {
+  SEND_EMAIL: 'email.send',
+  EMAIL_RETRY_500: 'email.retry.500',
+  EMAIL_RETRY_1000: 'email.retry.1000',
+  EMAIL_DEAD: 'email.dead',
 } as const;

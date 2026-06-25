@@ -12,6 +12,10 @@ import { QUEUES } from '@app/common/constants';
     LoggerModule,
     ClientsModule.registerAsync([
       Helper.createRABBITMQClient(constants.APPS.USERS, QUEUES.USERS),
+      Helper.createRABBITMQClient(
+        constants.APPS.NOTIFICATIONS,
+        QUEUES.NOTIFICATIONS,
+      ),
     ]),
   ],
   controllers: [AuthController],

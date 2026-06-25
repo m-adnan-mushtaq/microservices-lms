@@ -6,3 +6,4 @@ export * from './lib/common.helper';
 export * from './dto/auth/auth.dto';
 export * from './types/auth.types';
 export * from './logger/logger.module';
+export * from './dto/notification/notificatin.dto';

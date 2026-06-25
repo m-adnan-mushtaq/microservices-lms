@@ -55,6 +55,22 @@
         "tsConfigPath": "apps/lessons/tsconfig.app.json"
       }
     },
+    "notification": {
+      "type": "application",
+      "root": "apps/notification",
+      "entryFile": "main",
+      "sourceRoot": "apps/notification/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/notification/tsconfig.app.json",
+        "assets": [
+          {
+            "include": "templates/**/*",
+            "outDir": "dist/apps/notification/src"
+          }
+        ],
+        "watchAssets": true
+      }
+    },
     "users": {
       "type": "application",
       "root": "apps/users",
