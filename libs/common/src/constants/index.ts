@@ -40,3 +40,9 @@ export const EMAIL_ROUTING_KEYS = {
   EMAIL_RETRY_500: 'email.retry.500',
   EMAIL_DEAD: 'email.dead',
 } as const;
+
+export const DATABASE_NAMES = {
+  AUTH: 'AUTH_DATABASE_NAME',
+  USERS: 'USERS_DATABASE_NAME',
+  NOTIFICATIONS: 'NOTIFICATIONS_DATABASE_NAME',
+} as const;

@@ -1,8 +1,6 @@
 import { EMAIL_ROUTING_KEYS, EXCHANGES } from '@app/common/constants';
-import { SendEmailDto } from '@app/common/dto/notification/notificatin.dto';
 import { Injectable, Logger } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
-import { RmqContext } from '@nestjs/microservices';
 import * as amqp from 'amqplib';
 
 @Injectable()
@@ -11,11 +9,15 @@ export class EmailRetryService {
 
   constructor(private readonly configService: ConfigService) {}
 
-  async retryEmail(payload: any, retryCount: number, error: Error) {
+  async retryEmail(payload: any, retryCount: number, _error: Error) {
     this.logger.log(`Retrying email ${retryCount} times`);
     const connection = await amqp.connect(
       this.configService.get('RABBITMQ_URL') as string,
     );
+
+    this.logger.log(`Retry count ${retryCount}`);
+    this.logger.log(`Error ${_error}`);
+
     const channel = await connection.createChannel();
 
     if (retryCount < 2) {

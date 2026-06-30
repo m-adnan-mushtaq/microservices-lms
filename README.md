@@ -33,4 +33,16 @@ notification.exchange
     └─(routing key: email.dead)──▶ email.dead.queue
 ```
 
+## Generate Migrations:
+
+```
+npm run migration:generate --service=auth --name=CreateAuthTables
+```
+
+## Run Migration
+
+```
+npm run migration:run --service=auth
+```
+
 Made with ❤️ by Adnan Mushtaq
